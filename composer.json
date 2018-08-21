@@ -1,7 +1,7 @@
 {
     "name": "lacepek/yii2-rating-widget",
     "description": "Yii2 rating widget",
-    "type": "library",
+    "type": "yii2-extension",
     "license": "MIT",
     "version": "0.1",
     "authors": [
@@ -13,10 +13,11 @@
     "require": {
         "yiisoft/yii2": "^2.0",
         "php": ">=5.6.0"
-      },
-      "autoload": {
+    },
+    "autoload": {
         "psr-4": {
-          "lacepek\\rating\\": "src"
+            "lacepek\\rating\\": "src"
         }
-      }
+    },
+    "minimum-stability": "stable"
 }
