@@ -7,21 +7,23 @@ use yii\bootstrap\Widget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
-
 class RatingWidget extends Widget
 {
+    public $config = [];
+
     /**
      * @inheritdoc
      */
     public function run()
     {
-        RatingWidgetAsset::register($view);
+        RatingWidgetAsset::register($this->getView());
 
-        echo $this->getRating();
-    }
+        $configJson = json_encode($this->config);
 
-    public function getRating()
-    {
-        return '<p>foo</p>';
+        $js = <<<JS
+RatingPluginApi.create($configJson);
+JS;
+
+        $this->getView()->registerJs($js);
     }
 }

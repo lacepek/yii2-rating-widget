@@ -10,6 +10,10 @@
             "email": "la.cepek@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/lacepek/yii2-tcc-rating-widget/source",
+        "source": "https://github.com/lacepek/yii2-tcc-rating-widget"
+    },
     "require": {
         "yiisoft/yii2": "^2.0",
         "php": ">=5.6.0"
