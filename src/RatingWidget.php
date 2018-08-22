@@ -3,27 +3,41 @@
 namespace lacepek\rating;
 
 use Yii;
-use yii\bootstrap\Widget;
+use yii\bootstrap\InputWidget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
-class RatingWidget extends Widget
+class RatingWidget extends InputWidget
 {
-    public $config = [];
 
     /**
      * @inheritdoc
      */
     public function run()
     {
+        parent::run();
+
         RatingWidgetAsset::register($this->getView());
 
-        $configJson = json_encode($this->config);
+        $id = $this->options['id'];
+        $parentId = "field-$id";
+
+        $this->clientOptions['inputSelector'] = "#$id";
+        $this->clientOptions['parentSelector'] = ".$parentId";
+
+        $lines = [];
+        if ($this->hasModel()) {
+            $lines[] = Html::activeHiddenInput($this->model, $this->attribute, ['id' => $id]);
+        }
+
+        $configJson = json_encode($this->clientOptions);
 
         $js = <<<JS
 RatingPluginApi.create($configJson);
 JS;
 
         $this->getView()->registerJs($js);
+
+        return implode("\n", $lines);
     }
 }
