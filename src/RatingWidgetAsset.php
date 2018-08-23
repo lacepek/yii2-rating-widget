@@ -8,5 +8,5 @@ class RatingWidgetAsset extends AssetBundle
 {
     public $sourcePath = '@vendor/lacepek/rating-plugin';
 
-    public $js = ['js/rating.js'];
+    public $js = ['dist/rating.min.js'];
 }
