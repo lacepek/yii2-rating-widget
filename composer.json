@@ -3,7 +3,7 @@
     "description": "Yii2 rating widget",
     "type": "yii2-extension",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Ladislav Cepek",
