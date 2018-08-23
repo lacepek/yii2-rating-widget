@@ -2,7 +2,6 @@
 
 namespace lacepek\rating;
 
-use kartik\form\ActiveField;
 use Yii;
 use yii\bootstrap\InputWidget;
 use yii\helpers\BaseHtml;
