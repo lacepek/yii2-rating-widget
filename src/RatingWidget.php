@@ -2,8 +2,10 @@
 
 namespace lacepek\rating;
 
+use kartik\form\ActiveField;
 use Yii;
 use yii\bootstrap\InputWidget;
+use yii\helpers\BaseHtml;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 
@@ -24,6 +26,12 @@ class RatingWidget extends InputWidget
 
         $this->clientOptions['inputSelector'] = "#$id";
         $this->clientOptions['parentSelector'] = ".$parentId";
+
+        $value = BaseHtml::getAttributeValue($this->model, $this->attribute);
+
+        if ($value) {
+            $this->clientOptions['value'] = $value;
+        }
 
         $lines = [];
         if ($this->hasModel()) {
