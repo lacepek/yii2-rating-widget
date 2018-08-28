@@ -28,5 +28,11 @@
         "psr-4": {
             "lacepek\\rating\\": "src"
         }
-    }
+    },
+    "repositories": [
+        {
+          "type": "git",
+          "url": "https://github.com/lacepek/rating-plugin.git"
+        }
+    ]
 }
