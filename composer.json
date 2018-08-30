@@ -16,14 +16,15 @@
     },
     "repositories": [
         {
-          "type": "git",
-          "url": "https://github.com/lacepek/rating-plugin.git"
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
         "yiisoft/yii2": "^2.0",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "php": ">=5.6.0"
+        "php": ">=5.6.0",
+        "npm-asset/rating-plugin": "master"
     },
     "extra": {
         "branch-alias": {
